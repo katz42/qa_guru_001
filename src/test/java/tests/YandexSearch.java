@@ -10,8 +10,13 @@ import static com.codeborne.selenide.Selenide.open;
 class YandexSearch {
     @Test
     void selenideSearchTest() {
+        // Open Yandex
         open("https://www.yandex.ru");
+
+        //Type in 'Java 8'
         $(byName("text")).setValue("Java 8").pressEnter();
+
+        // Find 'oracle.com' on page
         $("html").shouldHave(text("oracle.com"));
     }
 }
